@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Was wir tun | KI Innovator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1c1e54;
+            --secondary-color: #5054a0;
+            --accent-color: #f72585;
+            --background-color: #f0f0f0;
+            --text-color: #2f2f2f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .innovation {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .innovation h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .innovation-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .innovation-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .innovation-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .innovation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#innovation">Innovation</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Wir gestalten die Zukunft mit KI</h1>
+                <p>Entdecken Sie, wie unsere innovativen KI-Lösungen Ihr Unternehmen transformieren können</p>
+            </div>
+        </section>
+
+        <section id="services" class="container">
+            <h2>Unsere Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>KI-Beratung</h3>
+                    <p>Wir helfen Ihnen, die richtigen KI-Strategien für Ihr Unternehmen zu entwickeln.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Maßgeschneiderte KI-Lösungen</h3>
+                    <p>Wir entwickeln individuelle KI-Anwendungen, die perfekt auf Ihre Bedürfnisse zugeschnitten sind.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Datenanalyse & Prognosen</h3>
+                    <p>Nutzen Sie die Kraft der KI, um wertvolle Erkenntnisse aus Ihren Daten zu gewinnen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="innovation" class="innovation">
+            <div class="container">
+                <h2>Unsere Innovationen</h2>
+                <div class="innovation-grid">
+                    <div class="innovation-item">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Neuronale Netze</h3>
+                        <p>Fortschrittliche Architekturen für tiefes Lernen</p>
+                    </div>
+                    <div class="innovation-item">
+                        <i class="fas fa-language"></i>
+                        <h3>NLP</h3>
+                        <p>Revolutionäre Sprachverarbeitungstechnologien</p>
+                    </div>
+                    <div class="innovation-item">
+                        <i class="fas fa-eye"></i>
+                        <h3>Computer Vision</h3>
+                        <p>Innovative Bilderkennungs- und Verarbeitungssysteme</p>
+                    </div>
+                    <div class="innovation-item">
+                        <i class="fas fa-robot"></i>
+                        <h3>Robotik</h3>
+                        <p>Integration von KI in fortschrittliche Robotersysteme</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 KI Innovator. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to service cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.service-card').forEach((card) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

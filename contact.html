@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | KI Innovator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1f1a57;
+            --secondary-color: #5b6ee5;
+            --accent-color: #f72585;
+            --background-color: #f0f0f0;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 160px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .contact-info {
+            flex: 1;
+            background: linear-gradient(to right, rgb(85, 85, 201), rgb(22, 22, 66));
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-info ul {
+            list-style-type: none;
+        }
+
+        .contact-info ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info ul li i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .social-media {
+            margin-top: 30px;
+        }
+
+        .social-media a {
+            color: white;
+            font-size: 24px;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: var(--accent-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-form,
+            .contact-info {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a  href="what-we-do.html">Was wir tun</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2>Kontaktieren Sie uns</h2>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Betreff</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Nachricht</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit">Senden</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h2>Kontaktinformationen</h2>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Innovationsstraße 42, 12345 Zukunftsstadt</li>
+                        <li><i class="fas fa-phone"></i> +49 123 456789</li>
+                        <li><i class="fas fa-envelope"></i> info@ki-innovator.de</li>
+                    </ul>
+                    <div class="social-media">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 KI Innovator. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Hier würde normalerweise der Code für das Senden des Formulars stehen
+            alert('Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.');
+            this.reset();
+        });
+
+        // Animierte Erscheinung der Kontaktformular- und Infobereiche
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.contact-form, .contact-info').forEach((el) => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
