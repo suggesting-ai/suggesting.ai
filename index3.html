@@ -36,6 +36,7 @@
         }
 
         header {
+            
             background: linear-gradient(to right, rgb(50, 65, 119), black, #101238);
             color: white;
             text-align: center;
@@ -48,6 +49,7 @@
             margin-bottom: 0.5rem;
             font-size: 2.5rem;
         }
+
 
         main {
             margin-top: 2rem;
@@ -219,48 +221,31 @@
         }
 
         .loading-animation__content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .loading-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
+            width: 100px;
+            height: 100px;
+            border: 5px solid #fff;
+            border-top: 5px solid var(--primary-color);
             border-radius: 50%;
-            margin: 0 5px;
-            animation: bounce 0.5s ease-in-out infinite;
+            animation: spin 1s linear infinite, pulse 2s ease-in-out infinite;
         }
 
-        .loading-dot:nth-child(2) {
-            animation-delay: 0.1s;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        .loading-dot:nth-child(3) {
-            animation-delay: 0.2s;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
 
         @media (max-width: 768px) {
             .options-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             }
-            h1 {
-                font-size: 1.9rem;
-            }
-            .card {
-                padding: 1rem;
-            }
-            .option-button {
-                padding: 0.5rem;
-            }
-            .option-button i {
-                font-size: 1.5rem;
+            .h1 {
+                max-width: 400px;
+                font-size: smaller;
             }
         }
     </style>
@@ -358,11 +343,7 @@
     </div>
 
     <div class="loading-animation" style="display: none;">
-        <div class="loading-animation__content">
-            <div class="loading-dot"></div>
-            <div class="loading-dot"></div>
-            <div class="loading-dot"></div>
-        </div>
+        <div class="loading-animation__content"></div>
     </div>
 
     <script>
@@ -372,12 +353,11 @@
                 { title: "The Shawshank Redemption", genre: "Drama", mood: "Inspirierend", platform: "Netflix" },
                 { title: "Inception", genre: "Sci-Fi", mood: "Spannend", platform: "Amazon Prime" },
                 { title: "The Grand Budapest Hotel", genre: "Komödie", mood: "Heiter", platform: "Disney+" },
-                { title: "The Dark Knight", genre: "Action", 
-                mood: "Intensiv", platform: "HBO" },
+                { title: "The Dark Knight", genre: "Action", mood: "Intensiv", platform: "HBO" },
                 { title: "Spirited Away", genre: "Animation", mood: "Fantasievoll", platform: "Netflix" },
                 { title: "Forrest Gump", genre: "Drama", mood: "Herzerwärmend", platform: "Amazon Prime" },
                 { title: "The Matrix", genre: "Sci-Fi", mood: "Spannend", platform: "HBO" },
-                { title: "Pulp Fiction", genre: "Krimi", mood: "Intensiv", platform: "Netflix" },
+                {   title: "Pulp Fiction", genre: "Krimi", mood: "Intensiv", platform: "Netflix" },
                 { title: "The Lion King", genre: "Animation", mood: "Inspirierend", platform: "Disney+" },
                 { title: "Interstellar", genre: "Sci-Fi", mood: "Nachdenklich", platform: "Amazon Prime" },
                 { title: "The Godfather", genre: "Krimi", mood: "Intensiv", platform: "Netflix" },
@@ -543,7 +523,7 @@
                         <li>
                             ${movie.title} 
                             <a href="https://www.netflix.com/search?q=${encodeURIComponent(movie.title)}" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-netflix platform-icon" title="Auf Netflix verfügbar"></i>
+                                <i class="fab fa-netflix #9928" title="Auf Netflix verfügbar"></i>
                             </a>
                             <a href="https://www.amazon.com/s?k=${encodeURIComponent(movie.title)}&i=instant-video" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-amazon platform-icon" title="Auf Amazon Prime verfügbar"></i>
@@ -583,7 +563,7 @@
                 document.querySelector('.loading-animation').style.display = 'none';
                 document.getElementById('recommendations').style.display = 'block';
                 document.getElementById('recommendations').scrollIntoView({ behavior: 'smooth' });
-            }, 1000); // 1 Sekunde Verzögerung für die Animation
+            }, 1000); // 2 Sekunden Verzögerung für die Animation
         });
     </script>
 </body>
